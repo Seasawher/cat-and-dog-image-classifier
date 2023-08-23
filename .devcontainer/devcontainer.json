@@ -1,7 +1,10 @@
 {
-    "name": "${containerWorkspaceFolder}",
-    "image": "jupyter/tensorflow-notebook:python-3.11",
-    "postCreateCommand": "pip install -r requirements.txt",
+    "name": "${localWorkspaceFolderBasename}",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "onCreateCommand": "poetry install",
+    "postCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
     "customizations": {
         "vscode": {
             "settings": {
