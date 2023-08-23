@@ -9,6 +9,7 @@ readme = "README.md"
 python = ">=3.11,<3.12"
 ipykernel = "^6.25.1"
 tensorflow = "^2.13.0"
+matplotlib = "^3.7.2"
 
 
 [build-system]
