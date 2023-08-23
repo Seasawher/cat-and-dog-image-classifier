@@ -3,7 +3,9 @@
     "build": {
         "dockerfile": "Dockerfile"
     },
+    // onCreateでpoetry installを実行することにより，ビルドの待ち時間を減らす
     "onCreateCommand": "poetry install",
+    // コンテナが立ち上がった時にすぐに git が使えるようにする
     "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
     "customizations": {
         "vscode": {
@@ -12,7 +14,13 @@
                 "editor.insertSpaces": true,
                 "files.eol": "\n",
                 "files.trimFinalNewlines": true,
-                "files.trimTrailingWhitespace": true
+                "files.trimTrailingWhitespace": true,
+                "[python]": {
+                    // デフォルトのフォーマッタとしてBlackを選択
+                    "editor.defaultFormatter": "ms-python.black-formatter",
+                    // Python 拡張が提供するフォーマッター連携は無効にしておく
+                    "python.formatting.provider": "none"
+                }
             },
             "extensions": [
                 "mhutchie.git-graph",
@@ -26,7 +34,8 @@
                 "ms-toolsai.jupyter-renderers",
                 "VisualStudioExptTeam.vscodeintellicode",
                 "njqdev.vscode-python-typehint",
-                "tamasfe.even-better-toml"
+                "tamasfe.even-better-toml",
+                "ms-python.black-formatter"
             ]
         }
     }
