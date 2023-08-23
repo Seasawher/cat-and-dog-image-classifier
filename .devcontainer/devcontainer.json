@@ -4,7 +4,7 @@
         "dockerfile": "Dockerfile"
     },
     "onCreateCommand": "poetry install",
-    "postCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+    "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
     "customizations": {
         "vscode": {
             "settings": {
