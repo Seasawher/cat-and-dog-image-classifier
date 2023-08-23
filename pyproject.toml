@@ -6,7 +6,9 @@ authors = ["Your Name <you@example.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.11,<3.12"
+ipykernel = "^6.25.1"
+tensorflow = "^2.13.0"
 
 
 [build-system]
