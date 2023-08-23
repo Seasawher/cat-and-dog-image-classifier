@@ -25,7 +25,8 @@
                 "ms-toolsai.vscode-jupyter-cell-tags",
                 "ms-toolsai.jupyter-renderers",
                 "VisualStudioExptTeam.vscodeintellicode",
-                "njqdev.vscode-python-typehint"
+                "njqdev.vscode-python-typehint",
+                "tamasfe.even-better-toml"
             ]
         }
     }
